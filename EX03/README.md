@@ -16,5 +16,6 @@ https://github.com/mtov/esmforum/blob/main/docs/testes-integracao.md
 '''
 cd esmforum
 
-npm test --coverage
+npm run test -- --coverage
+
 '''
