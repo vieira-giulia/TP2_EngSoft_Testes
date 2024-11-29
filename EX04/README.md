@@ -2,3 +2,10 @@ Implemente os três testes E2E solicitados no final do seguinte roteiro prático
 
 https://github.com/mtov/roteiro-cypress
 
+
+##### Execução do exercício
+
+
+
+
+
