@@ -1,3 +1,6 @@
 [submodule "EX04/todomvc"]
 	path = EX04/todomvc
 	url = git@github.com:tastejs/todomvc.git
+[submodule "EX05/demo-ci"]
+	path = EX05/demo-ci
+	url = git@github.com:vieira-giulia/demo-ci.git
