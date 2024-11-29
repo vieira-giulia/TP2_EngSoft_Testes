@@ -69,66 +69,78 @@ describe('TODOMvc App', () => {
       .should('have.length', 2);
   });
 
+  // Teste 01
   it('Marca uma tarefa como concluída', () => {
     cy.visit(''); 
 
+    // Adiciona tarefa
     cy.get('[data-cy=todo-input]')
       .type('Tarefa para marcar como concluída{enter}');
 
+    // Verifica se tarefa foi adicionada
     cy.get('[data-cy=todos-list]')
       .children()
       .should('have.length', 1);
 
+    // Marca tarefa como concluída
     cy.get('[data-cy=todos-list] > li [data-cy=toggle-todo-checkbox]')
       .click();
 
+    // Verifica se a tarefa foi marcada como concluída
     cy.get('[data-cy=todos-list] > li')
       .should('have.class', 'completed');
   });
 
+  // Teste 02
   it('Desmarca tarefa como concluída', () => {
     cy.visit(''); 
   
-    // Add a task
+    // Adiciona tarefa
     cy.get('[data-cy=todo-input]')
       .type('Tarefa para desmarcar{enter}');
+    
+    // Verifica se tarefa foi adicionada
+    cy.get('[data-cy=todos-list]')
+    .children()
+    .should('have.length', 1);
   
-    // Mark the task as completed
+    // Marca tarefa como concluída
     cy.get('[data-cy=todos-list] > li [data-cy=toggle-todo-checkbox]')
       .click();
   
-    // Verify the task is marked as completed
+    // Verifica que a tarefa foi marcada como concluída
     cy.get('[data-cy=todos-list] > li')
       .should('have.class', 'completed');
   
-    // Unmark the task (desmarcar)
+    // Desmarca a tarefa
     cy.get('[data-cy=todos-list] > li [data-cy=toggle-todo-checkbox]')
       .click();
   
-    // Verify the task is no longer completed
+    // Verifica que a tarefa foi desmarcada como concluída
     cy.get('[data-cy=todos-list] > li')
       .should('not.have.class', 'completed');
   });
 
+  // Teste 03
   it('Verifica o filtro "Todos" para mostrar todas as tarefas', () => {
     cy.visit(''); 
   
-    // Add tasks
+    // Adiciona tarefa
     cy.get('[data-cy=todo-input]')
       .type('Tarefa 1{enter}')
       .type('Tarefa 2{enter}')
       .type('Tarefa 3{enter}');
   
-    // Ensure all tasks are added
+    // Verifica se todas as tarefas foram adicionadas
     cy.get('[data-cy=todos-list]')
       .children()
       .should('have.length', 3);
   
-    // Click the "All" filter
+    // Clica no filtro All
     cy.get('[data-cy=filter-all-link]')
       .click();
   
-    // Verify that all tasks are shown
+    // Verifica se todas as tarefas aparecem
     cy.get('[data-cy=todos-list]')
       .children()
       .should('have.length', 3);
