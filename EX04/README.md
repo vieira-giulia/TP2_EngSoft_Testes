@@ -9,6 +9,8 @@ https://github.com/mtov/roteiro-cypress
 '''
 cd roteiro-cypress-main
 
+npm run dev
+
 npx cypress run
 
 '''
